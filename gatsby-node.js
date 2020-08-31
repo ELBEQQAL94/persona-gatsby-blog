@@ -1,55 +1,46 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+// exports.creaetPages = async function({actions, graphql}) {
+//   const {data} = await graphql`
+//     query {
+//       allMdx(sort: {fields: frontmatter___date, order: DESC}) {
+//         edges {
+//           node {
+//             id
+//             frontmatter {
+//               slug
+//             }
+//           }
+//         }
+//       }
+//     }
+//   `;
 
-// You can delete this file if you're not using it
+//   // Create paginated pages for posts
+//   const postPerPage = 1;
+//   const numPages = Math.ceil(data.allMdx.edges.length / postPerPage);
 
-const path = require('path');
+//   Array.from({ length: numPages }).forEach((_, i), () => {
+//     actions.creaetPages({
+//       path: i === 0 ? `/` : `/${ i + 1}`,
+//       component: require.resolve("./src/templates/allPosts.js"),
+//       context: {
+//         limit: postPerPage,
+//         skip: i * postPerPage,
+//         numPages,
+//         currentPage: i + 1,
+//       },
+//     });
+//   });
 
-exports.createPages = ({ graphql, actions }) => {
-	const { createPage } = actions;
+//   // Create Single Post
+//   data.allMdx.edges.forEach((edge) => {
+//     const id = edge.node.id;
+//     const slug = edge.node.frontmatter.slug;
 
-	return new Promise((resolve, reject) => {
-		const blogPostTemplate = path.resolve('src/templates/blogPost.js');
-		// Query for markdown nodes to use in creating pages.
-		resolve(
-			graphql(
-				`
-					query {
-						allMarkdownRemark(
-							sort: { order: ASC, fields: [frontmatter___date] }
-						) {
-							edges {
-								node {
-									frontmatter {
-										path
-										title
-										tags
-									}
-								}
-							}
-						}
-					}
-				`
-			).then(result => {
-				const posts = result.data.allMarkdownRemark.edges;
+//     actions.creaetPages({
+//       path: slug,
+//       component: require.resolve(`./src/templates/singlePost.js`),
+//       context: {id},
+//     });
+//   });
 
-				posts.forEach(({ node }, index) => {
-					const path = node.frontmatter.path;
-					createPage({
-						path,
-						component: blogPostTemplate,
-						context: {
-              pathSlug: path,
-              prev: index === 0 ? null : posts[index - 1].node,
-			        next: index === posts.length - 1 ? null : posts[index + 1].node
-						}
-					});
-					resolve();
-				});
-			})
-		);
-	});
-};
+// };
