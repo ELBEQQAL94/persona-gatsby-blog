@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 // Styles
 import "./LeftContainer.scss";
 
-const LeftContainer = ({urlImg}) => {
+const LeftContainer = ({urlImg, author, title}) => {
   return (
     <div className="left__container">
       <Link to="/">
@@ -19,8 +19,8 @@ const LeftContainer = ({urlImg}) => {
         />
       </Link>
       <div className="full_name">
-        <h2>youssef elbeqqal</h2>
-        <p>full stack developer</p>
+        <h2>{author}</h2>
+      <p>{title}</p>
       </div>
     </div>
   );
@@ -28,6 +28,8 @@ const LeftContainer = ({urlImg}) => {
 
 LeftContainer.propTypes = {
   urlImg: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
 };
 
 export default LeftContainer;

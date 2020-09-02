@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Blog`,
-    description: `This is my personal blog.`,
-    author: `@elbeqqal`,
+    title: `Full Stack Developer`,
+    description: `This is my personal blog website.`,
+    author: `youssef elbeqqal`,
   },
   plugins: [
     'gatsby-transformer-remark',

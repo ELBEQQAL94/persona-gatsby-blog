@@ -12,15 +12,27 @@ const Navbar = () => {
 
   const data = useStaticQuery(graphql`
     query {
+      site {
+        siteMetadata {
+          author
+          title
+        }
+      }
       logo: file(relativePath: {eq: "gatsby-icon.jpeg"}) {
         publicURL
       }
     }
   `);
 
+  const {author, title} = data.site.siteMetadata;
+
   return (
     <nav className="nav">
-      <LeftContainer urlImg={data.logo.publicURL} />
+      <LeftContainer
+        urlImg={data.logo.publicURL}
+        author={author}
+        title={title}
+      />
       <RightContainer />
     </nav>
   );

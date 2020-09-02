@@ -1,7 +1,17 @@
 $primary: rgb(212, 212, 21);
 $white: #fff;
 $black: #000;
+$black-light: #141119;
 
-small {
-  color: $primary;
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-image: linear-gradient(
+    to right,
+    $black,
+    $black-light,
+  );
 }

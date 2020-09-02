@@ -1,0 +1,26 @@
+@import "../../sass/app.scss";
+
+.right__container {
+  flex: 1;
+  align-items: center;
+  .links {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      list-style-type: none;
+      .links__item {
+        margin-left: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        a {
+          color: $white;
+          text-decoration: none;
+          text-transform: uppercase;
+          transition: color 0.5s linear;
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+  }
+}
