@@ -1,0 +1,32 @@
+@import "../../sass/app.scss";
+
+.post {
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+  color: $white;
+  display: flex;
+  width: 100%;
+  margin-bottom: 2em;
+  opacity: 0.4;
+  .main__title {
+    h2 {
+      text-transform: uppercase;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    p {
+      font-size: 0.8em;
+      color: rgb(163, 143, 143);
+    }
+    padding: 15px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
+  &:hover {
+    opacity: 1;
+  }
+}
