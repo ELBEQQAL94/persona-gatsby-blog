@@ -28,12 +28,14 @@ const Navbar = () => {
 
   return (
     <nav className="nav">
-      <LeftContainer
-        urlImg={data.logo.publicURL}
-        author={author}
-        title={title}
-      />
-      <RightContainer />
+        <div className="nav__container">
+          <LeftContainer
+            urlImg={data.logo.publicURL}
+            author={author}
+            title={title}
+          />
+          <RightContainer />
+        </div>
     </nav>
   );
 };

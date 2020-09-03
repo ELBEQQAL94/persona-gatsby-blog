@@ -20,14 +20,12 @@ const Layout = ({ children }) => {
   return (
     <>
       <Navbar />
-      <div>
-        <main className="container main__section">{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">{data.site.siteMetadata.author}</a>
-        </footer>
-      </div>
+      <main className="main__section">{children}</main>
+      <footer>
+        © {new Date().getFullYear()}, Built with
+        {` `}
+        <a href="https://www.gatsbyjs.org">{data.site.siteMetadata.author}</a>
+      </footer>
     </>
   )
 }

@@ -2,6 +2,7 @@
 
 .left__container {
   display: flex;
+  justify-content: center;
   align-items: center;
   .logo__img {
     object-fit: contain;
@@ -15,10 +16,23 @@
     h2 {
       text-transform: uppercase;
       margin: 0;
+      letter-spacing: 4px;
     }
     p {
       text-transform: capitalize;
       color: $primary;
+    }
+  }
+}
+
+
+@media all and (max-width: $sm){
+  .left__container {
+    flex-direction: column;
+    .full_name {
+      h2 {
+        font-size: 20px;
+      }
     }
   }
 }

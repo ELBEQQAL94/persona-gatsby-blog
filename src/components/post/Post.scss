@@ -1,13 +1,18 @@
 @import "../../sass/app.scss";
 
 .post {
+  border-radius: 20px;
+  overflow: hidden;
   cursor: pointer;
-  transition: all 0.5s ease-out;
+  transition: all 0.5s linear;
   color: $white;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   width: 100%;
-  margin-bottom: 2em;
+  margin-bottom: 3.5em;
   opacity: 0.4;
+  height: 50vh;
   .main__title {
     h2 {
       text-transform: uppercase;
@@ -18,15 +23,22 @@
       font-size: 0.8em;
       color: rgb(163, 143, 143);
     }
-    padding: 15px;
+    padding: 20px;
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     flex-direction: column;
+  }
+  .thumbnail_container {
+    width: 50%;
+    .gatsby-image-wrapper {
+      width: 100% !important;
+      height: 100% !important;
+    }
   }
   &:hover {
     opacity: 1;
+    box-shadow: 0 0 10px rgb(90, 57, 90);
   }
 }

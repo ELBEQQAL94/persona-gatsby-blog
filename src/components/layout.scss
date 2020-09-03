@@ -5,6 +5,7 @@ html {
 }
 body {
   margin: 0;
+  overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -617,8 +618,8 @@ pre tt:after {
 }
 
 .main__section {
-  margin-top: 2em;
-  padding: 20px;
+  margin-top: 5em;
+  padding: 60px;
 }
 
 @media only screen and (max-width: 480px) {

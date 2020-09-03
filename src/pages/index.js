@@ -30,7 +30,6 @@ const IndexPage = () => {
   return (
     <Layout>
       <div>
-        <h4>Posts</h4>
         {
           data.allMdx.nodes.map(({frontmatter}) => (
             <Post
