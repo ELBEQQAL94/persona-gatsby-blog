@@ -9,13 +9,15 @@ const RightContainer = () => {
     <div className="right__container">
       <ul className="links">
         <li className="links__item">
-          <Link to="/">blog</Link>
+          <Link to="/" activeStyle={{ color: "red" }}>blog</Link>
         </li>
         <li className="links__item">
-          <Link to="/projects">projects</Link>
+          <Link to="/projects"       activeStyle={{ color: "red" }}
+>projects</Link>
         </li>
         <li className="links__item">
-          <Link to="/about">about</Link>
+          <Link to="/about"       activeStyle={{ color: "red" }}
+>about</Link>
         </li>
       </ul>
     </div>

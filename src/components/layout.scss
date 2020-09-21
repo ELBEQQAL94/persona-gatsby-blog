@@ -1,3 +1,5 @@
+@import "../sass/app.scss";
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -620,10 +622,19 @@ pre tt:after {
 .main__section {
   margin-top: 5em;
   padding: 60px;
+  color: $white;
 }
 
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
+  }
+}
+
+@media all and (max-width: $sm){
+  .main__section {
+    margin-top: 1em;
+    padding: 30px;
+    color: $white;
   }
 }

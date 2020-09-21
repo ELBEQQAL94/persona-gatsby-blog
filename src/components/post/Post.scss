@@ -9,10 +9,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 100%;
   margin-bottom: 3.5em;
   opacity: 0.4;
-  height: 50vh;
   .main__title {
     h2 {
       text-transform: uppercase;
@@ -32,13 +30,36 @@
   }
   .thumbnail_container {
     width: 50%;
-    .gatsby-image-wrapper {
-      width: 100% !important;
-      height: 100% !important;
-    }
+    padding: 30px;
   }
   &:hover {
     opacity: 1;
     box-shadow: 0 0 10px rgb(90, 57, 90);
+  }
+}
+
+@media all and (max-width: $md){
+  .post {
+    padding: 30px 0;
+    .main__title {
+      padding: 0
+    }
+    .thumbnail_container {
+      width: auto;
+    }
+  }
+}
+
+@media all and (max-width: $sm){
+  .post {
+    padding: 20px 0;
+    .main__title {
+      h2{
+        font-size: 16px;
+      }
+      p {
+        display: none
+      }
+    }
   }
 }
